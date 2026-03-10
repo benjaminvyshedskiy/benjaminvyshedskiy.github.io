@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ben Vyshedskiy</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%232d5a3d'/><text x='50%25' y='50%25' font-family='Georgia,serif' font-size='14' font-weight='600' fill='%23faf9f6' text-anchor='middle' dominant-baseline='central'>BV</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -381,6 +382,25 @@
       text-decoration: none;
     }
 
+    .venture-card-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .venture-card-body { flex: 1; min-width: 0; }
+
+    .venture-logo {
+      height: 32px;
+      width: auto;
+      max-width: 100px;
+      object-fit: contain;
+      flex-shrink: 0;
+      opacity: 0.85;
+      margin-top: 0.2rem;
+    }
+
     /* FOOTER */
     footer {
       border-top: 1px solid var(--rule);
@@ -443,7 +463,7 @@
         <h1>Ben Vyshedskiy</h1>
         <p class="role">Cambridge · Harvard Medical School · Orbit</p>
         <p>Hi, I am Ben, a third year natural science student at Cambridge! I love genetics, computational biology, discovering new world views, and working on startups which align investor capital with benefit to humanity.</p>
-        <p>I optimize my life to help others with the constraint of working on problems that interest me. If you want to discuss anything genetics or biotech related please reach out at: bv317 at cam.ac.uk</p>
+        <p>I optimize my life to help others with the constraint of working on problems that interest me. If you want to discuss anything genetics or biotech please reach out at: bv317 at cam.ac.uk</p>
       </div>
 
       <div class="profile-photo-wrap fade-in" style="transition-delay:0.15s">
@@ -462,7 +482,7 @@
 
         <div class="paper-item">
           <div class="paper-title">Prevailing positive selection, not purifying selection, of germline mtDNA mutations in human oocytes</div>
-          <div class="paper-authors">Melissa Franco, Zoë Fleischmann, Sofia Annis, Auden Cote-L’Heureux, Dylan Aidlen, Mark Khrapko, Benjamin Vyshedskiy, Daniil Mirzoyan, Jacob Bandell, Konstantin Popadin, Dori C. Woods, Jonathan L. Tilly, Konstantin Khrapko</div>
+          <div class="paper-authors">Benjamin Vyshedskiy, Zoë Fleischmann, Auden Cote-L'Heureux, Melissa Franco, Mark Khrapko, Konstantin Khrapko, et al.</div>
           <div class="paper-journal">bioRxiv preprint · December 31, 2025</div>
           <div class="paper-tags">
             <span class="tag tag-preprint">Preprint</span>
@@ -502,6 +522,7 @@
     <section id="writings">
       <div class="section-header fade-in">
         <h2>Writing</h2>
+        <p>Essays, commentary, and long-form thoughts.</p>
       </div>
 
       <div class="writing-subsection fade-in">
@@ -527,28 +548,39 @@
     <section id="building">
       <div class="section-header fade-in">
         <h2>Building</h2>
+        <p>Companies, projects, and initiatives at the interface of science and building.</p>
       </div>
 
       <div class="venture-grid">
 
         <div class="venture-card fade-in">
-          <div class="venture-status">Active · Feb 2026 – Present</div>
-          <div class="venture-name">Orbit Engineering</div>
-          <p class="venture-desc">Recruiting for Orbit.engineering.</p>
-          <div class="venture-meta">
-            <span>NueroTech</span>
-            <a href="https://orbit.engineering" target="_blank">orbit.engineering ↗</a>
+          <div class="venture-card-inner">
+            <div class="venture-card-body">
+              <div class="venture-status">Active · Feb 2026 – Present</div>
+              <div class="venture-name">Orbit Engineering</div>
+              <p class="venture-desc">Recruiting for Orbit.engineering.</p>
+              <div class="venture-meta">
+                <span>NeuroTech</span>
+                <a href="https://orbit.engineering" target="_blank">orbit.engineering ↗</a>
+              </div>
+            </div>
+            <img class="venture-logo" src="logo-mark.svg" alt="Orbit logo" />
           </div>
         </div>
 
         <div class="venture-card fade-in">
-          <div class="venture-status">Past · Dec 2025 – Feb 2026</div>
-          <div class="venture-name"><a href="https://imagiration.com" target="_blank" style="color:inherit;text-decoration:none;">ImagiRation</a></div>
-          <p class="venture-desc">Reached the semi-finals of the MIT Sloan Healthcare Innovations Prize (SHIP) 2026.</p>
-          <div class="venture-meta">
-            <span>Healthtech</span>
-            <a href="https://imagiration.com" target="_blank">imagiration.com ↗</a>
-            <a href="https://www.sloan-hbc.mit.edu/ship-home-2026" target="_blank">MIT SHIP Semi-finalist ↗</a>
+          <div class="venture-card-inner">
+            <div class="venture-card-body">
+              <div class="venture-status">Past · Dec 2025 – Feb 2026</div>
+              <div class="venture-name"><a href="https://imagiration.com" target="_blank" style="color:inherit;text-decoration:none;">ImagiRation</a></div>
+              <p class="venture-desc">Reached the semi-finals of the MIT Sloan Healthcare Innovations Prize (SHIP) 2026.</p>
+              <div class="venture-meta">
+                <span>Healthtech</span>
+                <a href="https://imagiration.com" target="_blank">imagiration.com ↗</a>
+                <a href="https://www.sloan-hbc.mit.edu/ship-home-2026" target="_blank">MIT SHIP Semi-finalist ↗</a>
+              </div>
+            </div>
+            <img class="venture-logo" src="Mita_Logo.svg" alt="ImagiRation logo" />
           </div>
         </div>
 
