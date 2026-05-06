@@ -22,6 +22,19 @@
       --accent-light: #e8f0eb;
       --serif: 'EB Garamond', Georgia, serif;
       --sans: 'DM Sans', sans-serif;
+      --nav-bg: rgba(250,249,246,0.92);
+    }
+
+    [data-theme="dark"] {
+      --ink: #e4e2dc;
+      --ink-light: #a8a49c;
+      --ink-faint: #6a665e;
+      --cream: #141412;
+      --cream-dark: #1c1a18;
+      --rule: #2c2a26;
+      --accent: #5a9e72;
+      --accent-light: #162210;
+      --nav-bg: rgba(20,20,18,0.92);
     }
 
     html { scroll-behavior: smooth; }
@@ -38,7 +51,7 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(250,249,246,0.92);
+      background: var(--nav-bg);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--rule);
       padding: 0 max(2rem, 5vw);
@@ -242,7 +255,24 @@
       font-weight: 500;
     }
 
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--rule);
+      color: var(--ink-light);
+      cursor: pointer;
+      padding: 0.3rem 0.55rem;
+      border-radius: 3px;
+      font-size: 0.85rem;
+      line-height: 1;
+      transition: color 0.2s, border-color 0.2s;
+      display: flex;
+      align-items: center;
+    }
+
+    .theme-toggle:hover { color: var(--accent); border-color: var(--accent); }
+
     .tag-preprint { background: #fef3cd; color: #7a5a00; }
+    [data-theme="dark"] .tag-preprint { background: #332800; color: #c9960a; }
     .tag-published { background: var(--accent-light); color: var(--accent); }
 
     .tag-link {
@@ -453,6 +483,7 @@
       <li><a href="#writings">Writing</a></li>
       <li><a href="#building">Building</a></li>
     </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">☽</button>
   </nav>
 
   <main>
@@ -602,6 +633,29 @@
     }, { threshold: 0.08 });
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    const toggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (saved === 'dark' || (!saved && prefersDark)) {
+      root.setAttribute('data-theme', 'dark');
+      toggle.textContent = '☀';
+    }
+
+    toggle.addEventListener('click', () => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        root.removeAttribute('data-theme');
+        toggle.textContent = '☽';
+        localStorage.setItem('theme', 'light');
+      } else {
+        root.setAttribute('data-theme', 'dark');
+        toggle.textContent = '☀';
+        localStorage.setItem('theme', 'dark');
+      }
+    });
   </script>
 
 </body>
